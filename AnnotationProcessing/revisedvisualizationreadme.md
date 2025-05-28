@@ -39,6 +39,22 @@ This process ensures that:
 
 ---
 
+### Output
+Each EEG file with updated annotations will be saved as:
+
+Neontal_eeg_dataset1/annotations/eegX_updated.fif
+
+These can now be visualized or used for model training with corrected labels as
+
+![d](https://github.com/user-attachments/assets/f2069073-88b5-4dea-a0e8-133459592354)
+
+---
+### Notes
+This process preserves non-overlapping original annotations.
+
+The "D" label can be reinterpreted depending on your project's specific labeling schema (e.g., "Differences")
+
+---
 ### Code Snippet
 
 ```python
@@ -90,28 +106,6 @@ for eeg_file in eeg_files:
     ))
     raw.save(os.path.join(annotation_folder, eeg_file.replace(".edf", "_updated.fif")), overwrite=True)
 
----
 
-### Input Requirements
 
-- **Preprocessed `.fif` EEG files**: Annotated EEGs from the initial pipeline.
-- **Updated annotations CSV (`annotations_difference_df`)**: A DataFrame (or CSV) with columns:
-  - `Id`: File identifier (extracted from filename like `eeg1.fif`)
-  - `from_sec`, `to_sec`: Time intervals (in seconds) needing new annotations.
 
----
-
-### Output
-Each EEG file with updated annotations will be saved as:
-
-Neontal_eeg_dataset1/annotations/eegX_updated.fif
-
-These can now be visualized or used for model training with corrected labels as
-
-![d](https://github.com/user-attachments/assets/f2069073-88b5-4dea-a0e8-133459592354)
-
----
-### Notes
-This process preserves non-overlapping original annotations.
-
-The "D" label can be reinterpreted depending on your project's specific labeling schema (e.g., "Differences")
