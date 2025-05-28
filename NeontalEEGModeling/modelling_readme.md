@@ -1,7 +1,7 @@
 
 ---
 
-# EEG Event Classification with EEGConformer
+# EEG Neonatal Seizure Detection with EEGConformer
 
 EEG training and evaluation pipeline using the EEGConformer model, with complete handling of **data imbalance**, **SMOTE**, and **cost-sensitive learning**, along with training, evaluation, and visualization. This repository implements a  pipeline for classifying EEG segments into **Seizure (S)** and **Non-Seizure (NS)** using the **EEGConformer** model. It supports training with:
 
