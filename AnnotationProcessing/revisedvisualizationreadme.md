@@ -91,6 +91,16 @@ for eeg_file in eeg_files:
     raw.save(os.path.join(annotation_folder, eeg_file.replace(".edf", "_updated.fif")), overwrite=True)
 
 ---
+
+### Input Requirements
+
+- **Preprocessed `.fif` EEG files**: Annotated EEGs from the initial pipeline.
+- **Updated annotations CSV (`annotations_difference_df`)**: A DataFrame (or CSV) with columns:
+  - `Id`: File identifier (extracted from filename like `eeg1.fif`)
+  - `from_sec`, `to_sec`: Time intervals (in seconds) needing new annotations.
+
+---
+
 ### Output
 Each EEG file with updated annotations will be saved as:
 
