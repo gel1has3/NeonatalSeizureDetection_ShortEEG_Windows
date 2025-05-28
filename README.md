@@ -72,9 +72,7 @@ All EEG files go through the following steps:
    - Custom filters from `.mat` files
 
 6. **Annotation Assignment**  
-   Each seizure interval is split into 1-second segments and labeled:
-   - `S` for seizure
-   - `NS` for non-seizure 
+   Each seizure interval is split into 1-second segments and labeled: `S` for seizure and `NS` for non-seizure 
 
 7. **Annotation Saving**  
    Annotated EEG is saved in `.fif` format for downstream use.
