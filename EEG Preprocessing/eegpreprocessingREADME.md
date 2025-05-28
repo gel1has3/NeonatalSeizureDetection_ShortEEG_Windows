@@ -7,7 +7,7 @@
 
 ## Overview
 
-**NeuroInsight** is a robust Python-based pipeline for preprocessing neonatal EEG recordings for seizure analysis. This includes signal standardization, bipolar montage generation, advanced filtering, segmentation, and labeling based on expert annotations. The goal is to provide clean and labeled EEG data suitable for downstream machine learning tasks and clinical research. This repository provides a complete EEG processing pipeline for neonatal seizure detection using `.edf` EEG recordings. The pipeline includes:
+A Python-based pipeline for preprocessing neonatal EEG recordings for seizure analysis. This includes signal standardization, bipolar montage generation, advanced filtering, segmentation, and labeling based on expert annotations. The goal is to provide clean and labeled EEG data suitable for downstream machine learning tasks and clinical research. This repository provides a complete EEG processing pipeline for neonatal seizure detection using `.edf` EEG recordings. The pipeline includes:
 
 - Loading and validating `.edf` files
 - Standardizing EEG channel names
