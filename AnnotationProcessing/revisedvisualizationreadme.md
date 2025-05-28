@@ -90,7 +90,7 @@ for eeg_file in eeg_files:
     ))
     raw.save(os.path.join(annotation_folder, eeg_file.replace(".edf", "_updated.fif")), overwrite=True)
 
-
+---
 ### Output
 Each EEG file with updated annotations will be saved as:
 
@@ -100,7 +100,7 @@ These can now be visualized or used for model training with corrected labels as
 
 ![d](https://github.com/user-attachments/assets/f2069073-88b5-4dea-a0e8-133459592354)
 
-
+---
 ### Notes
 This process preserves non-overlapping original annotations.
 
