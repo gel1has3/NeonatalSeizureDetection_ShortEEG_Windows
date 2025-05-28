@@ -28,13 +28,18 @@ The EEG files and annotations should follow this structure:
 
 Neontal\_eeg\_dataset1/
 │
-├── eeg1.edf
-├── eeg2.edf
-├── ...
-└── annotations/
-├── eeg1.fif
-├── eeg2.fif
-└── ...
+├── data/
+│   ├── raw_edf/
+│   ├── annotations/
+│   └── ...
+├── models/
+│   └── transformer.py
+│   └── eegconformer.py
+├── train_model.py
+├── evaluate_model.py
+├── preprocess_pipeline.py
+├── update_annotations.py
+└── README.md
 
 ````
 
@@ -95,12 +100,27 @@ Steps:
 ### 1. EEGConformer
 
 - Combines convolutional and Transformer layers.
+- Hybrid model combining:
+   - CNN for spatial feature extraction
+   - Transformer/conformer layers for temporal dynamics
 - Excels in capturing both local (spatial) and global (temporal) EEG patterns.
 
 ### 2. Transformer 
 
 - Treats each EEG segment as a sequence of features.
 - Learns attention-based representations across channels and time.
+- Multi-head self-attention model
+- Operates on EEG segment sequences
+- Lightweight compared to EEGConformer, useful as a strong baseline
+
+
+## Model Training Strategies
+To handle class imbalance (seizure segments are rare), we trained each model using three different strategies:
+| Strategy               | Description                                                                   |
+| ---------------------- | ----------------------------------------------------------------------------- |
+| **Original**           | Trained on raw distribution (imbalanced).                                     |
+| **SMOTE Oversampling** | Synthetic Minority Over-sampling applied on seizure segments to balance data. |
+| **Cost-Sensitive**     | Class weights assigned to loss function (`CrossEntropyLoss(weight=...)`).     |
 
 ---
 
@@ -121,14 +141,26 @@ Steps:
 
 ---
 
-## Evaluation
+## Evaluation & Comparison
 
 Models are evaluated using:
+| Metric           | Description                                 |
+| ---------------- | ------------------------------------------- |
+| Accuracy         | Overall correct classification rate         |
+| Precision (S/NS) | How many predicted seizures were correct    |
+| Recall (S/NS)    | How many true seizures were detected        |
+| F1-score         | Harmonic mean of precision and recall       |
+| Confusion Matrix | For visual inspection of prediction quality |
 
-- **Accuracy**
-- **Precision / Recall / F1-score**
-- **Confusion Matrix**
-- **ROC-AUC** (if applicable)
+## Comparison Table (Sample Format)
+| Model        | Strategy       | Accuracy  | Precision (S) | Recall (S) | F1-score (S) |
+| ------------ | -------------- | --------- | ------------- | ---------- | ------------ |
+| Transformer  | Original       | 85.2%     | 0.71          | 0.54       | 0.61         |
+| Transformer  | SMOTE          | 88.6%     | 0.76          | 0.68       | 0.72         |
+| Transformer  | Cost-Sensitive | 89.1%     | 0.79          | 0.70       | 0.74         |
+| EEGConformer | Original       | 87.5%     | 0.74          | 0.66       | 0.70         |
+| EEGConformer | SMOTE          | 90.2%     | 0.81          | 0.72       | 0.76         |
+| EEGConformer | Cost-Sensitive | **91.0%** | **0.83**      | **0.75**   | **0.79**     |
 
 Optional:
 - Attention visualization (for interpretability)
