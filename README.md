@@ -1,6 +1,6 @@
 # NeonatalSeizureDetection_ShortEEG_Windows (GST)
 
-This repository contains the full pipeline, including preprocessing, fine-tuning, training, and evaluation using **EEGConformer** and **Transformer** models for seizure (`S`) and non-seizure (`NS`) classification.
+It contains the full pipeline, including preprocessing, fine-tuning, training, and evaluation using **EEGConformer** and **Transformer** models for seizure (`S`) and non-seizure (`NS`) classification.
 
 ## Hardware Used
 All experiments were conducted on an NVIDIA GPU using PyTorch with CUDA enabled. Training and evaluation leveraged GPU acceleration for faster computation and model convergence. 
