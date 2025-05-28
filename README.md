@@ -175,9 +175,6 @@ Models are evaluated using:
 | EEGConformer | Cost-Sensitive | **91.0 ± 0.7%** | **0.83 ± 0.02** | **0.75 ± 0.02** | **0.79 ± 0.02** | **0.91 ± 0.01** |
 
 
-Optional:
-- Attention visualization (for interpretability)
-- Per-patient performance breakdown
 
 ---
 
