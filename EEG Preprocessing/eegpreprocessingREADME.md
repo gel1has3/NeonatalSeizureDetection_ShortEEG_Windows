@@ -1,8 +1,3 @@
-`README.md` file for your EEG preprocessing and annotation pipeline using `.edf` files
-
----
-
-
 # Neonatal EEG Preprocessing  Pipeline
 
 ## Overview
