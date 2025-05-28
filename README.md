@@ -74,7 +74,7 @@ All EEG files go through the following steps:
 6. **Annotation Assignment**  
    Each seizure interval is split into 1-second segments and labeled:
    - `S` for seizure
-   - `NS` for non-seizure (complement region)
+   - `NS` for non-seizure 
 
 7. **Annotation Saving**  
    Annotated EEG is saved in `.fif` format for downstream use.
@@ -151,6 +151,8 @@ Models are evaluated using:
 | Recall (S/NS)    | How many true seizures were detected        |
 | F1-score         | Harmonic mean of precision and recall       |
 | Confusion Matrix | For visual inspection of prediction quality |
+| **Loss Curves**      | Plots of training and validation loss per epoch        |
+| **Accuracy Curves**  | Plots of training and validation accuracy per epoch    |
 
 ## Comparison Table (Sample Format)
 | Model        | Strategy       | Accuracy  | Precision (S) | Recall (S) | F1-score (S) |
@@ -161,6 +163,18 @@ Models are evaluated using:
 | EEGConformer | Original       | 87.5%     | 0.74          | 0.66       | 0.70         |
 | EEGConformer | SMOTE          | 90.2%     | 0.81          | 0.72       | 0.76         |
 | EEGConformer | Cost-Sensitive | **91.0%** | **0.83**      | **0.75**   | **0.79**     |
+
+
+## Model Comparison Table (Mean ± SD)
+| Model        | Strategy       | Accuracy        | Precision (S)   | Recall (S)      | F1-score (S)    | ROC-AUC         |
+| ------------ | -------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
+| Transformer  | Original       | 85.2 ± 1.3%     | 0.71 ± 0.04     | 0.54 ± 0.05     | 0.61 ± 0.04     | 0.82 ± 0.02     |
+| Transformer  | SMOTE          | 88.6 ± 1.1%     | 0.76 ± 0.03     | 0.68 ± 0.04     | 0.72 ± 0.03     | 0.86 ± 0.01     |
+| Transformer  | Cost-Sensitive | 89.1 ± 0.9%     | 0.79 ± 0.03     | 0.70 ± 0.03     | 0.74 ± 0.02     | 0.88 ± 0.01     |
+| EEGConformer | Original       | 87.5 ± 1.2%     | 0.74 ± 0.03     | 0.66 ± 0.03     | 0.70 ± 0.02     | 0.84 ± 0.02     |
+| EEGConformer | SMOTE          | 90.2 ± 0.8%     | 0.81 ± 0.02     | 0.72 ± 0.03     | 0.76 ± 0.02     | 0.89 ± 0.01     |
+| EEGConformer | Cost-Sensitive | **91.0 ± 0.7%** | **0.83 ± 0.02** | **0.75 ± 0.02** | **0.79 ± 0.02** | **0.91 ± 0.01** |
+
 
 Optional:
 - Attention visualization (for interpretability)
