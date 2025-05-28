@@ -7,11 +7,9 @@ This repository contains the full pipeline, including preprocessing, fine-tuning
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 
-The goal is to classify short windows EEG segments into
-- `S`: Seizure
-- `NS`: Non-seizure
+The goal is to classify short windows EEG segments into `S`: Seizure and `NS`: Non-seizure
 
 We use a  workflow that combines:
 - **Preprocessing raw EDF EEG data**
@@ -22,7 +20,7 @@ We use a  workflow that combines:
 
 ---
 
-## 📂 Dataset Structure
+## Dataset Structure
 
 The EEG files and annotations should follow this structure:
 
@@ -46,7 +44,7 @@ Annotation CSVs:
 
 ---
 
-## 🧠 Preprocessing Pipeline
+## Preprocessing Pipeline
 
 All EEG files go through the following steps:
 
@@ -80,7 +78,7 @@ All EEG files go through the following steps:
 
 ---
 
-## 🔁 Annotation Update Workflow (Optional)
+## Annotation Update Workflow (Optional)
 
 Some `.fif` files may need manual annotation correction (e.g., missed or mislabeled events). Use `annotations_difference.csv` to relabel .
 
@@ -106,7 +104,7 @@ Steps:
 
 ---
 
-## 🏋️ Model Training
+## Model Training
 
 ### Input
 - Annotated EEG segments (1 sec each) with labels: `S`, `NS`
@@ -123,7 +121,7 @@ Steps:
 
 ---
 
-## 📊 Evaluation
+## Evaluation
 
 Models are evaluated using:
 
@@ -138,7 +136,7 @@ Optional:
 
 ---
 
-## 🔧 How to Run
+## How to Run
 
 ### 1. Preprocess & Annotate
 
@@ -166,7 +164,7 @@ python evaluate_model.py --model-path saved_models/transformer_final.pt
 
 ---
 
-## 📎 Requirements
+## Requirements
 
 * Python 3.8+
 * `mne`, `scipy`, `numpy`, `pandas`
@@ -180,7 +178,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📌 Notes
+##  Notes
 
 * Ensure that `filters_db_256.mat` is present for filtering step.
 * Update `downsample_factor` if original EEGs use different sampling rates.
@@ -188,7 +186,7 @@ pip install -r requirements.txt
 
 ---
 
-## 👩‍🔬 Acknowledgements
+## Acknowledgements
 
 * Dataset based on  "A dataset of neonatal EEG recordings with seizure annotations @https://zenodo.org/records/1280684"
 
