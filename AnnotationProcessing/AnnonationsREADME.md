@@ -44,6 +44,9 @@ Identifies and extracts continuous seizure segments from a DataFrame of binary a
 ---
 
 ## Example Usage
+Either open in Jupyter Notebook. 
+
+or 
 
 ```python
 import pandas as pd
