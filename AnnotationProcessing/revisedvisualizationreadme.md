@@ -96,8 +96,10 @@ Each EEG file with updated annotations will be saved as:
 
 Neontal_eeg_dataset1/annotations/eegX_updated.fif
 
-These can now be visualized or used for model training with corrected labels as 
-![image](https://github.com/user-attachments/assets/014900ed-ec14-427c-bbb9-136a2a5bae4c)
+These can now be visualized or used for model training with corrected labels as
+
+![d](https://github.com/user-attachments/assets/f2069073-88b5-4dea-a0e8-133459592354)
+
 
 ### Notes
 This process preserves non-overlapping original annotations.
