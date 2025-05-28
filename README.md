@@ -1,7 +1,4 @@
-# NeonatalSeizureDetection_ShortEEG_Windows
-- **Geletaw Sahle Tegenaw, Ph.D**
-- **Norman Delanty, Prof.**
-- **Tomas Ward, Prof.**
+# NeonatalSeizureDetection_ShortEEG_Windows (GST)
 
 This repository contains the full pipeline, including preprocessing, fine-tuning, training, and evaluation using **EEGConformer** and **Transformer** models for seizure (`S`) and non-seizure (`NS`) classification.
 
