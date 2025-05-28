@@ -1,10 +1,9 @@
-EEG training and evaluation pipeline using the EEGConformer model, with complete handling of **data imbalance**, **SMOTE**, and **cost-sensitive learning**, along with training, evaluation, and visualization.
 
 ---
 
 # EEG Event Classification with EEGConformer
 
-This repository implements a deep learning pipeline for classifying EEG segments into **Seizure (S)** and **Non-Seizure (NS)** using the **EEGConformer** model. It supports training with:
+EEG training and evaluation pipeline using the EEGConformer model, with complete handling of **data imbalance**, **SMOTE**, and **cost-sensitive learning**, along with training, evaluation, and visualization. This repository implements a  pipeline for classifying EEG segments into **Seizure (S)** and **Non-Seizure (NS)** using the **EEGConformer** model. It supports training with:
 
 * Standard supervised learning
 * **Data imbalance mitigation** using SMOTE
