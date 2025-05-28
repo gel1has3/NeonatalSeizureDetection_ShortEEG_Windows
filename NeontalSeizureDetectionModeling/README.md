@@ -128,6 +128,8 @@ It returns:
 | ROC-AUC          | Area under ROC curve                        |
 | PR Curve         | Precision-Recall curve                      |
 | Confusion Matrix | Count of TP, FP, TN, FN                     |
+| Loss Curves      | Plots of training and validation loss per epoch        |
+| Accuracy Curves  | Plots of training and validation accuracy per epoch    |
 
 ### Visualizations
 
