@@ -97,7 +97,7 @@ Steps:
 - Combines convolutional and Transformer layers.
 - Excels in capturing both local (spatial) and global (temporal) EEG patterns.
 
-### 2. Transformer (Vanilla)
+### 2. Transformer 
 
 - Treats each EEG segment as a sequence of features.
 - Learns attention-based representations across channels and time.
