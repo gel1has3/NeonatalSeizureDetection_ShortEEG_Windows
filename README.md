@@ -14,7 +14,7 @@ The goal is to classify short windows EEG segments into `S`: Seizure and `NS`: N
 We use a  workflow that combines:
 - **Preprocessing raw EDF EEG data**
 - **Segment-wise annotation with seizure and non-seizure tags**
-- **Optional relabeling (`D`) of specific intervals**
+- **Optional relabeling (`D`) of specific intervals (expert annotation disagreement)**
 - **Model training using Transformer and EEGConformer**
 - **Performance evaluation and visualization**
 
