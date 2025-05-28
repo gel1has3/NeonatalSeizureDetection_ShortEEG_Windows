@@ -7,8 +7,6 @@ This repository contains the full pipeline, including preprocessing, fine-tuning
 
 ---
 
-```markdown
-
 ## 📋 Project Overview
 
 The goal is to classify short windows EEG segments into
