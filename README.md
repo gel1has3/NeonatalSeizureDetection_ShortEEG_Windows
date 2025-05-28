@@ -1,5 +1,4 @@
 # NeonatalSeizureDetection_ShortEEG_Windows
- by:
 - **Geletaw Sahle Tegenaw, Ph.D**
 - **Norman Delanty, Prof.**
 - **Tomas Ward, Prof.**
