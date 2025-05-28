@@ -1,4 +1,4 @@
-# EEG Epoch Dataset Preparation
+# EEG Epoch Creation and Dataset Preparation for ML/DL/Transfomer
 
 This repository provides a set of utility functions to load, filter, and prepare EEG epoch data from `.fif` (MNE) or `.set` (EEGLAB) files. These functions are ideal for preprocessing EEG data for downstream tasks like classification, deep learning, or feature extraction.
 
