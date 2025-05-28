@@ -1,6 +1,4 @@
-Here's a comprehensive `README.md` file tailored for the **NeuroInsight: Neonatal EEG Preprocessing** project. This file documents the dataset, preprocessing goals, methodology, and usage details for users or collaborators.
 
----
 
 # 🧠 NeuroInsight: Neonatal EEG Preprocessing
 
@@ -96,7 +94,7 @@ project/
 
 ---
 
-## Usage Guide
+## 🧪 Usage Guide
 
 ### 💾 Paths to Modify
 
@@ -107,7 +105,7 @@ edfdirectly_path = '/path/to/edf/files'
 annotation_path = '/path/to/seizures_chunks.csv'
 ```
 
-### Preprocessing Execution
+### ✅ Preprocessing Execution
 
 ```python
 process_edf_files(edf_directory=edfdirectly_path, 
@@ -126,7 +124,7 @@ Each EDF file will be:
 
 ---
 
-## Segment Classification Logic
+## 🧠 Segment Classification Logic
 
 A 1-second EEG segment is labeled `seizure` **if it falls entirely** within an expert-annotated seizure interval; otherwise, it's labeled `noseizure`.
 
@@ -140,7 +138,7 @@ def get_segment_label(start_time, end_time, intervals):
 
 ---
 
-##  Dependencies
+## 🧩 Dependencies
 
 * Python 3.7+
 * Libraries:
@@ -155,7 +153,7 @@ pip install mne numpy pandas matplotlib scipy h5py
 
 ---
 
-##  EEG Subject Groups
+## 👨‍👩‍👧‍👦 EEG Subject Groups
 
 ```python
 # Seizure-annotated by all 3 experts
@@ -167,7 +165,7 @@ nsIDs = [3, 10, 18, ..., 72]
 
 ---
 
-## Citation
+## 🧾 Citation
 
 If you use this code or dataset, please cite:
 
@@ -175,7 +173,7 @@ If you use this code or dataset, please cite:
 
 ---
 
-## Contact
+## 📬 Contact
 
 For questions or contributions, please contact **Geletaw Sahle Tegenaw**
 Email: *\[[your-email@example.com](mailto:your-email@example.com)]*
@@ -184,4 +182,3 @@ GitHub: \[your-github-link]
 ---
 
 Let me know if you’d like the README saved to a file, enhanced with badges or links, or transformed into a Jupyter-compatible Markdown cell.
-
