@@ -117,9 +117,4 @@ This will visualize a 20-second window of the annotated EEG starting at the 100-
 * Each file includes seizure and non-seizure events in 1-second resolution
 * Output is in `.fif` format, ready for  machine learning and visualization
 
----
-
-## License
-
-This code is provided for academic and research use. Licensing for clinical or commercial use may require permission.
 
