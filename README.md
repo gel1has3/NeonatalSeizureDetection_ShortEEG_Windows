@@ -75,8 +75,7 @@ All EEG files go through the following steps:
 
 7. **Annotation Saving**  
    Annotated EEG is saved in `.fif` format for downstream use.
-   
-9. **Annotation Visualization **  
+8. **Annotation Visualization** 
    ![image](https://github.com/user-attachments/assets/40971b57-4701-401c-8cd9-81dea935fff0)
 
 ---
