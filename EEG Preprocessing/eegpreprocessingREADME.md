@@ -1,184 +1,130 @@
+`README.md` file for your EEG preprocessing and annotation pipeline using `.edf` files
+
+---
 
 
-# 🧠 NeuroInsight: Neonatal EEG Preprocessing
-
-**Authors**:
-Geletaw Sahle Tegenaw (Ph.D), Norman Delanty (Prof), Tomas Ward (Prof)
+# Neonatal EEG Preprocessing  Pipeline
 
 ## Overview
 
-NeuroInsight is a neonatal EEG preprocessing framework built to facilitate automated neonatal seizure detection by applying robust preprocessing pipelines to raw EEG recordings. The foundation of this work lies in detecting the periodic and evolving patterns indicative of seizures in neonates.
+This repository provides a complete EEG processing pipeline for neonatal seizure detection using `.edf` EEG recordings. The pipeline includes:
+
+- Loading and validating `.edf` files
+- Standardizing EEG channel names
+- Creating a bipolar montage
+- Downsampling and filtering signals
+- Annotating seizure (`S`) and non-seizure (`NS`) segments based on CSV annotation input
+- Saving the annotated EEG files in `.fif` format for further analysis or visualization
 
 ---
 
-## 📋 Neonatal EEG Dataset Summary
+## Folder Structure
 
-* **Source**: NICU, Helsinki University Hospital
-* **Recording Period**: 2010–2014
-* **Total Subjects**: 79 neonates
-* **Data Format**:
-
-  * 79 EDF (European Data Format) raw EEG files
-  * Annotation files: 3 expert annotations (CSV, MAT formats)
-* **Electrode Setup**:
-
-  * 19 electrodes (10-20 system)
-  * Bipolar montage: 18 channel pairs
-* **Sampling Rate**: 256 Hz
-* **Annotation**:
-
-  * Provided by 3 independent human experts (A, B, C)
-  * Annotations sampled at 1-second resolution
-* **Seizure Annotations**:
-
-  * Total annotated seizures: **1,379**
-  * 40 neonates with consistent expert annotations
-  * 22 seizure-free neonates
-  * 17 neonates excluded due to partial annotations
-* **Dataset Link**: [Zenodo - 4940267](https://zenodo.org/record/4940267)
+```plaintext
+📁 Neontal_eeg_dataset1/
+├── eeg1.edf                      # Original EDF EEG file
+├── eeg2.edf                      # Additional EEG recordings
+├── annotations/                 # Output directory for annotated .fif files
+│   └── eeg1.fif
+📄 EEG_ML.ipynb                   # Notebook executing the pipeline
+📄 csa_seizures_chunks.csv        # CSV file containing seizure annotation time ranges
+📄 filters_db_256.mat             # MATLAB file containing custom filter coefficients
+````
 
 ---
 
-## ⚙️ Key Preprocessing Pipeline
+## Requirements
 
-### ✔️ File Loading
-
-* Reads `.edf` EEG files using MNE with error handling.
-
-### ✔️ Channel Name Standardization
-
-* Cleans and renames channels to remove prefixes/suffixes like `EEG` and `-REF`.
-
-### ✔️ Bipolar Montage Creation
-
-* Constructs 18-channel bipolar montage from standard 10-20 pairs.
-
-### ✔️ Filtering
-
-* **Filters Applied**:
-
-  * Custom filters from provided `.mat` file (`filters_db_256.mat`)
-  * 50 Hz notch filter
-  * 0.3–30 Hz bandpass Butterworth filter
-  * Zero-phase filtering via `filtfilt` to avoid distortion
-
-### ✔️ Downsampling
-
-* EEG is downsampled from 256 Hz to **64 Hz** (factor of 4).
-
-### ✔️ Segmentation and Labeling
-
-* EEG is split into 1-second segments.
-* Each segment labeled as `seizure` or `noseizure` using expert annotations.
-
-### ✔️ HDF5 Output Format
-
-* EEG segments saved as `.h5` files for efficiency.
-* File naming includes expert, ID, label, and time segment.
-
----
-
-## 📁 Directory Structure
+Install all required dependencies:
 
 ```bash
-project/
-│
-├── data/
-│   ├── C1_seizure/       # Segments labeled as seizures
-│   └── C1_noseizure/     # Segments labeled as non-seizures
-│
-├── filters_db_256.mat    # Filter coefficients
-├── seizures_chunks.csv   # Annotations from experts
-└── preprocessing_script.py
+pip install mne pandas numpy scipy
 ```
 
 ---
 
-## 🧪 Usage Guide
+## Core Functions
 
-### 💾 Paths to Modify
+### `load_edf_file(file_path)`
 
-Ensure the following paths are correctly set in your script:
+Loads an `.edf` EEG file with robust error handling.
+
+### `rename_eeg_channels(raw)`
+
+Standardizes channel names by removing prefixes/suffixes like `"EEG "` and `"-REF"`.
+
+### `create_bipolar_montage(raw)`
+
+Generates a bipolar montage using the 10–20 system (e.g., `Fp1-F3`, `F3-C3`).
+
+### `downsample_eeg(raw_bipolar, downsample_factor=4)`
+
+Reduces the sampling frequency (e.g., from 256 Hz to 64 Hz).
+
+### `get_filter_coefficients(raw)`
+
+Applies a series of filters (notch, bandpass) using predefined MATLAB `.mat` filter coefficients.
+
+---
+
+## EEG Annotation Workflow
+
+1. **Define File Paths**
+
+   ```python
+   eeg_folder = "Neontal_eeg_dataset1"
+   annotation_folder = os.path.join(eeg_folder, "annotations")
+   ```
+
+2. **Load Annotation CSV**
+
+   The CSV file (`csa_seizures_chunks.csv`) should include `Id`, `from_sec`, `to_sec` columns specifying seizure intervals.
+
+3. **Loop Through EDF Files**
+
+   For each EEG file:
+
+   * Load and preprocess the raw EEG signal
+   * Annotate seizure (`S`) segments based on CSV intervals
+   * Automatically fill in the remaining segments as non-seizure (`NS`)
+   * Save as `.fif` file with all annotations
+
+4. **Resulting Output**
+
+   Annotated EEG files are saved under:
+
+   ```
+   Neontal_eeg_dataset1/annotations/eegX.fif
+   ```
+
+---
+
+## Example Code Snippet
+
+You can either open it in Jupyter Notebook
+
+or 
+
 
 ```python
-edfdirectly_path = '/path/to/edf/files'
-annotation_path = '/path/to/seizures_chunks.csv'
+raw = mne.io.read_raw_fif("Neontal_eeg_dataset1/annotations/eeg1.fif", preload=True)
+raw.plot(start=100, duration=20)
 ```
 
-### ✅ Preprocessing Execution
-
-```python
-process_edf_files(edf_directory=edfdirectly_path, 
-                  csv_annotations_path=annotation_path, 
-                  experts=['A', 'B', 'C'])
-```
-
-Each EDF file will be:
-
-* Renamed
-* Converted to bipolar montage
-* Filtered
-* Downsampled
-* Segmented
-* Saved with appropriate labels
+This will visualize a 20-second window of the annotated EEG starting at the 100-second mark. like
+![image](https://github.com/user-attachments/assets/adc6cb5e-15f5-4a40-b194-0a614a4cd91a)
 
 ---
 
-## 🧠 Segment Classification Logic
+## Final Output
 
-A 1-second EEG segment is labeled `seizure` **if it falls entirely** within an expert-annotated seizure interval; otherwise, it's labeled `noseizure`.
-
-```python
-def get_segment_label(start_time, end_time, intervals):
-    for _, row in intervals.iterrows():
-        if start_time >= row['from_sec'] and end_time <= row['to_sec']:
-            return 'seizure'
-    return 'noseizure'
-```
+* Annotated EEGs with consistent channel naming and bipolar montages
+* Each file includes seizure and non-seizure events in 1-second resolution
+* Output is in `.fif` format, ready for  machine learning and visualization
 
 ---
 
-## 🧩 Dependencies
+## License
 
-* Python 3.7+
-* Libraries:
+This code is provided for academic and research use. Licensing for clinical or commercial use may require permission.
 
-  * `mne`, `numpy`, `pandas`, `matplotlib`, `scipy`, `h5py`
-
-Install with:
-
-```bash
-pip install mne numpy pandas matplotlib scipy h5py
-```
-
----
-
-## 👨‍👩‍👧‍👦 EEG Subject Groups
-
-```python
-# Seizure-annotated by all 3 experts
-sIDs = [1, 4, 5, 7, 9, 11, ..., 79]
-
-# Seizure-free
-nsIDs = [3, 10, 18, ..., 72]
-```
-
----
-
-## 🧾 Citation
-
-If you use this code or dataset, please cite:
-
-> [Zenodo Dataset - DOI:10.5281/zenodo.4940267](https://zenodo.org/record/4940267)
-
----
-
-## 📬 Contact
-
-For questions or contributions, please contact **Geletaw Sahle Tegenaw**
-Email: *\[[your-email@example.com](mailto:your-email@example.com)]*
-GitHub: \[your-github-link]
-
----
-
-Let me know if you’d like the README saved to a file, enhanced with badges or links, or transformed into a Jupyter-compatible Markdown cell.
