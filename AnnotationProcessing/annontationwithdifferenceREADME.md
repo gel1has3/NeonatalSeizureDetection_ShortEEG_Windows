@@ -2,7 +2,7 @@
 
 ---
 
-````markdown
+
 # Neonatal EEG Preprocessing and Annotation Pipeline
 
 ## Overview
@@ -100,6 +100,11 @@ Applies a series of filters (notch, bandpass) using predefined MATLAB `.mat` fil
 ---
 
 ## Example Code Snippet
+
+You can either open it in Jupyter Notebook
+
+or 
+
 
 ```python
 raw = mne.io.read_raw_fif("Neontal_eeg_dataset1/annotations/eeg1.fif", preload=True)
