@@ -1,4 +1,4 @@
-Here is a comprehensive and well-documented `README.md` file for your EEG preprocessing and annotation pipeline using `.edf` files:
+`README.md` file for your EEG preprocessing and annotation pipeline using `.edf` files
 
 ---
 
