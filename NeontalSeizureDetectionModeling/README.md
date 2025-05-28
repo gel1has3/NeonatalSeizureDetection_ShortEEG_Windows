@@ -193,6 +193,9 @@ set_seed(42)
 ---
 
 ## To Run
+You can either open it in Jupyter Notebook
+
+or 
 
 ```bash
 python train.py --strategy smote --epochs 100 --lr 0.001 --batch_size 64
