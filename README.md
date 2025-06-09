@@ -25,7 +25,6 @@ We use a  workflow that combines:
 The EEG files and annotations should follow this structure:
 
 ```
-
 Neontal\_eeg\_dataset1/
 │
 ├── data/
