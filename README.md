@@ -82,7 +82,7 @@ All EEG files go through the following steps:
 
 ## Annotation Update Workflow (Optional)
 
-Some `.fif` files may need manual annotation correction (e.g., missed or mislabeled events). Use `annotations_difference.csv` to relabel .
+Some `.fif` files may need manual annotation correction (e.g., missed or mislabeled events). Use `annotations_difference.csv` to relabel.
 
 Steps:
 - Load existing `.fif`
