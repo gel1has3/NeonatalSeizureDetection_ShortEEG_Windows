@@ -111,7 +111,6 @@ Steps:
 - Operates on EEG segment sequences
 - Lightweight compared to EEGConformer, useful as a strong baseline
 
-
 ## Model Training Strategies
 To handle class imbalance (seizure segments are rare), we trained each model using three different strategies:
 | Strategy               | Description                                                                   |
