@@ -78,7 +78,6 @@ All EEG files go through the following steps:
 8. **Annotation Visualization** 
  ![image](https://github.com/user-attachments/assets/6955639d-9af0-4858-8ee2-3411d049491e)
 
-
 ---
 
 ## Annotation Update Workflow (Optional)
