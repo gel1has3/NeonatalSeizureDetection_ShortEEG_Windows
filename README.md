@@ -48,7 +48,6 @@ Annotation CSVs:
 - `annotations_difference.csv`: Manually corrected regions to be relabeled (optional).
 
 ---
-
 ## Preprocessing Pipeline
 
 All EEG files go through the following steps:
