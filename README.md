@@ -18,7 +18,6 @@ We use a  workflow that combines:
 - **Model training using Transformer and EEGConformer**
 - **Performance evaluation and visualization**
 
-
 ---
 
 ## Dataset Structure
