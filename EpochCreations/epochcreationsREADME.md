@@ -76,4 +76,3 @@ X, y = prepare_dataset_from_folder(folder, keep_labels=labels_to_keep, format='f
 
 print("Dataset shape:", X.shape)
 print("Labels shape:", y.shape)
-
