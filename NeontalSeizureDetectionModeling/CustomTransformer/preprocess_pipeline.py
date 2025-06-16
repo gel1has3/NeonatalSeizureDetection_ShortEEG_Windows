@@ -1,4 +1,3 @@
-# preprocess_pipeline.py
 
 import numpy as np
 import torch
