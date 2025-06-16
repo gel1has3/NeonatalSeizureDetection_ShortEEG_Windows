@@ -1,5 +1,3 @@
-# evaluate_model.py
-
 import torch
 import numpy as np
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
