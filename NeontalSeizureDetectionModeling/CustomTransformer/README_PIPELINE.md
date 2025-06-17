@@ -1,6 +1,6 @@
-Neonatal EEG Classification with Transformer Variants: Training, Evaluation, and Preprocessing Pipeline
 
-Sure! Here's a **clear description of each function and component** used across the files we generated, grouped by file:
+
+Sure! Here's a **Neonatal EEG Classification with Transformer Variants: Training, Evaluation, and Preprocessing Pipeline** used across the files we generated, grouped by file:
 
 ---
 
