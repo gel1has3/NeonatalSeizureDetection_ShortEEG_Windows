@@ -45,6 +45,7 @@
 
 ---
 
+
 ## ✅ Model Files (all 3)
 
 Each file defines a variant of the EEG Transformer model:
