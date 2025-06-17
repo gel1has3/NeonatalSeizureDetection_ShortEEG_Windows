@@ -549,5 +549,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # count_and_visualize_files("/Users/geletawsahle/Desktop/mlflow_eeg/data")
     count_and_visualize_files("/home/geletaw/eeg_llm/data")
