@@ -1,6 +1,4 @@
-
-
- **Neonatal EEG Classification with Transformer Variants: Training, Evaluation, and Preprocessing Pipeline** 
+**Neonatal EEG Classification with Transformer Variants: Training, Evaluation, and Preprocessing Pipeline** 
 
 ---
 
