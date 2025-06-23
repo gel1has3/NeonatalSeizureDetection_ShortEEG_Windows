@@ -140,6 +140,15 @@ def create_bipolar_montage(raw):
 
     return raw_bipolar
 
+# ------------------ Artifact Removal (ICA) ------------------ #
+def remove_artifacts_with_ica(raw, n_components=18, random_state=97):
+    ica = mne.preprocessing.ICA(n_components=n_components, random_state=random_state, max_iter='auto')
+    ica.fit(raw)
+    # Optional: Automatically detect EOG/ECG artifacts
+    # eog_inds, scores = ica.find_bads_eog(raw)
+    # ica.exclude = eog_inds
+    raw_clean = ica.apply(raw)
+    return raw_clean
 
 def downsample_eeg(raw_bipolar, downsample_factor=4):
     """
