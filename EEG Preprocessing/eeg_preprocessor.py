@@ -425,7 +425,10 @@ def process_edf_files(edf_directory, csv_annotations_path, experts=['A', 'B', 'C
             # Create bipolar montage
             raw = create_bipolar_montage(raw)
             print("after bipolar montage", raw.ch_names)
-
+            
+            # Artifact Removal (ICA)
+            raw = remove_artifacts_with_ica(raw)
+            
             #Downsample  by a factor of 4  such as 256  to 64
             raw = downsample_eeg(raw, downsample_factor=4)
             raw.plot()
