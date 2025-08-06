@@ -31,6 +31,7 @@ Crucially, the architecture incorporates **residual connections** around both th
 
 The output of the transformer block is then flattened to a 2D tensor, concatenating the time and channel dimensions. This flattened vector is then fed into a **classification head**, which is a simple linear layer. This layer projects the learned features into the final output dimension, typically producing **logits** for binary or multi-class classification.
 
+
 ---
 
 ### 3. Conclusion
