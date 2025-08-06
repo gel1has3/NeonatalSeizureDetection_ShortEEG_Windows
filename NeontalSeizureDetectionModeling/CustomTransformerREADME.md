@@ -1,4 +1,4 @@
-1. A["Raw EEG Input"]: dimensions as [batch_size × num_channels × num_timepoints].
+1. A["Raw EEG Input"]: dimensions as [batch_size × num_channels × num_timepoints]. 
 
 2. B["Per-Channel Standardization"]:   standardization step: X_hat = (X - mean) / (std + 1e-5).
 
