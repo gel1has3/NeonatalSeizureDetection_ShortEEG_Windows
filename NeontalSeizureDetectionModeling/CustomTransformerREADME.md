@@ -1,7 +1,7 @@
 ### Transformer Architecture 
 ***
 
-### 1. Model Structure Overview
+### 1. Model Structure 
 
 The model processes raw EEG signals in a sequence of well-defined steps, beginning with input preprocessing and culminating in a classification output. The core of the architecture is a multi-head attention mechanism followed by a feed-forward network, a configuration well-suited for capturing long-range dependencies within the temporal EEG data.
 
