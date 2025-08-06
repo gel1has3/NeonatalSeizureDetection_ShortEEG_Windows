@@ -1,7 +1,4 @@
-### Transformer Architecture for EEG Analysis: A Technical Report
-
-This report outlines the architecture of the **EEG Transformer** model, an advanced deep learning framework designed for analyzing Electroencephalography (EEG) data. The model's design, which adheres to a standard transformer encoder structure, is detailed below.
-
+### Transformer Architecture 
 ***
 
 ### 1. Model Structure Overview
