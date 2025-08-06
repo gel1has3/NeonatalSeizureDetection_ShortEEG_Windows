@@ -17,6 +17,7 @@ The process begins with the **raw EEG input** data, represented as a tensor of d
 
 Following standardization, the model adds **positional encoding** to the data. This is achieved using a **sinusoidal encoding** scheme, which embeds temporal information into the data, allowing the model to understand the sequence of EEG signals over time. The tensor is then permuted from `[batch_size × num_channels × num_timepoints]` to `[num_timepoints × batch_size × num_channels]` to prepare it for the attention mechanism, which expects the sequence length (timepoints) as the first dimension.
 
+
 #### **2.3. Transformer Encoder Block**
 
 The prepared data enters the main transformer block, which consists of two primary sub-layers:
