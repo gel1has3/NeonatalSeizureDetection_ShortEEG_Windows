@@ -41,11 +41,11 @@ The EEG Transformer architecture is a robust and sophisticated model for EEG ana
 
 ##### 1. A["Raw EEG Input"]: dimensions as [batch_size × num_channels × num_timepoints]. 
 
-2. B["Per-Channel Standardization"]:   standardization step: X_hat = (X - mean) / (std + 1e-5).
+##### 2. B["Per-Channel Standardization"]:   standardization step: X_hat = (X - mean) / (std + 1e-5).
 
-3. C["Positional Encoding Injection"]: This is the X_tilde = X_hat + self.positional_encoding line. The description "Sinusoidal Channel-Time Encoding".
+##### 3. C["Positional Encoding Injection"]: This is the X_tilde = X_hat + self.positional_encoding line. The description "Sinusoidal Channel-Time Encoding".
 
-4. D["Tensor Permutation"]:  "Time → Batch Sequence" is an accurate, higher-level description of X_tilde.permute(2, 0, 1).
+##### 4. D["Tensor Permutation"]:  "Time → Batch Sequence" is an accurate, higher-level description of X_tilde.permute(2, 0, 1).
 
 5. E["Multi-Head Self-Attention"]:  self.multihead_attn call.
 
