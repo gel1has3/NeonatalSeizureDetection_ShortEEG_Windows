@@ -47,7 +47,7 @@ The EEG Transformer architecture is a robust and sophisticated model for EEG ana
 
 ##### 4. D["Tensor Permutation"]:  "Time → Batch Sequence" is an accurate, higher-level description of X_tilde.permute(2, 0, 1).
 
-5. E["Multi-Head Self-Attention"]:  self.multihead_attn call.
+##### 5. E["Multi-Head Self-Attention"]:  self.multihead_attn call.
 
 6. F["Attention Output: Dropout + LayerNorm"]:  self.dropout(attn_output) and the subsequent list comprehension with self.norm1.
 
