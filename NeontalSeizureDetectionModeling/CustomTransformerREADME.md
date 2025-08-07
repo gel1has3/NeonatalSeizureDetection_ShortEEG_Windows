@@ -1,5 +1,4 @@
 ### Transformer Architecture 
-***
 
 ### 1. Model Structure 
 
