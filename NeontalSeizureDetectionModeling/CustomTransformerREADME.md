@@ -53,7 +53,7 @@ The EEG Transformer architecture is a robust and sophisticated model for EEG ana
 
 ##### 7. G["Feed-Forward Network"]: s the self.ffn sequential block.
 
-8. H["Residual Connection + Layer Normalization"]: This is the self.norm2(ff_output + X_ring) line.  It  shows the skip connection (F -->|Skip Connection| H) that carries the output of the attention block to be added to the output of the feed-forward network. This is a key feature of the transformer architecture that the code implements.
+##### 8. H["Residual Connection + Layer Normalization"]: This is the self.norm2(ff_output + X_ring) line.  It  shows the skip connection (F -->|Skip Connection| H) that carries the output of the attention block to be added to the output of the feed-forward network. This is a key feature of the transformer architecture that the code implements.
 
 9. I["Feature Flattening"]: This matches the O.view(O.size(0), -1) operation, preparing the data for the final classification layer.
 
