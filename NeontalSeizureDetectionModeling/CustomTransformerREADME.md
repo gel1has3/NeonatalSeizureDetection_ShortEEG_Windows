@@ -49,7 +49,7 @@ The EEG Transformer architecture is a robust and sophisticated model for EEG ana
 
 ##### 5. E["Multi-Head Self-Attention"]:  self.multihead_attn call.
 
-6. F["Attention Output: Dropout + LayerNorm"]:  self.dropout(attn_output) and the subsequent list comprehension with self.norm1.
+##### 6. F["Attention Output: Dropout + LayerNorm"]:  self.dropout(attn_output) and the subsequent list comprehension with self.norm1.
 
 7. G["Feed-Forward Network"]: s the self.ffn sequential block.
 
