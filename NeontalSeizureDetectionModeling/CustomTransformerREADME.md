@@ -11,9 +11,11 @@ The model processes raw EEG signals in a sequence of well-defined steps, beginni
 
 The process begins with the **raw EEG input** data, represented as a tensor of dimensions `[batch_size × num_channels × num_timepoints]`. This data undergoes **per-channel standardization**, where each channel's mean and standard deviation are used to normalize the values. This step is crucial for maintaining stable training and preventing certain channels from dominating the learning process.
 
+
 #### **2.2. Positional and Temporal Encoding**
 
 Following standardization, the model adds **positional encoding** to the data. This is achieved using a **sinusoidal encoding** scheme, which embeds temporal information into the data, allowing the model to understand the sequence of EEG signals over time. The tensor is then permuted from `[batch_size × num_channels × num_timepoints]` to `[num_timepoints × batch_size × num_channels]` to prepare it for the attention mechanism, which expects the sequence length (timepoints) as the first dimension.
+
 
 
 #### **2.3. Transformer Encoder Block**
