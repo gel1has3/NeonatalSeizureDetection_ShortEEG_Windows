@@ -64,3 +64,4 @@ The EEG Transformer architecture is a robust and sophisticated model for EEG ana
 ##### 10. J["Classification Head"]: This is the self.classifier linear layer.
 
 ##### 11. K["Prediction Output"]: The final output returned by the function. The  "logits" is an accurate description of the raw outputs from the linear layer before a potential softmax function is applied.
+
