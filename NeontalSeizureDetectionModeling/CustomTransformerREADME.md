@@ -39,7 +39,9 @@ The output of the transformer block is then flattened to a 2D tensor, concatenat
 The EEG Transformer architecture is a robust and sophisticated model for EEG analysis. By leveraging the power of attention mechanisms, it can effectively capture both local and global dependencies within the data, leading to a strong performance in classification tasks. The use of standardization, positional encoding, and residual connections ensures that the model is both efficient to train and capable of learning from complex, high-dimensional EEG signals.
 
 
+
 ### Flowchart Summary 
+
 
 ##### 1. A["Raw EEG Input"]: dimensions as [batch_size × num_channels × num_timepoints]. 
 
