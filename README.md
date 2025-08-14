@@ -231,6 +231,11 @@ pip install -r requirements.txt
 * Dataset based on  "A dataset of neonatal EEG recordings with seizure annotations @https://zenodo.org/records/1280684"
 
 
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+
 
 
 
