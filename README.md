@@ -1,4 +1,5 @@
-# Neonatal Seizure Detection Short EEG Windows (GST)
+# Neonatal Seizure Detection Short EEG Windows (GST,TW)
+
 
 It contains a full pipeline, including preprocessing, fine-tuning, training, and evaluation using  **EEGConformer** and **Transformer** models for seizure (`S`) and non-seizure (`NS`) classification.
 
