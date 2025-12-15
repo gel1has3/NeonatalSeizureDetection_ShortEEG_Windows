@@ -2,6 +2,7 @@
 
 This repository provides tools to extract seizure segments from binary time-series annotations provided by multiple experts (e.g., Experts A, B, C, and CSA). These annotations typically indicate seizure presence (`1`) or absence (`0`) per second for multiple infants or patients.
 
+
 ---
 
 ## Features
@@ -10,6 +11,7 @@ This repository provides tools to extract seizure segments from binary time-seri
 - Converts time (in seconds) to sample indices using a configurable sampling rate (default: 256 Hz).
 - Supports batch processing of multiple experts.
 - Outputs a clean, concatenated DataFrame or CSV file.
+
 
 ---
 
