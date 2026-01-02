@@ -121,6 +121,7 @@ To handle class imbalance (seizure segments are rare), we trained each model usi
 | **SMOTE Oversampling** | Synthetic Minority Over-sampling applied on seizure segments to balance data. |
 | **Cost-Sensitive**     | Class weights assigned to loss function (`CrossEntropyLoss(weight=...)`).     |
 
+
 ---
 
 ## Model Training
