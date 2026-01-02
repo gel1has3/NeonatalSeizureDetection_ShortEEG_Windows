@@ -214,6 +214,7 @@ Install with:
 pip install -r requirements.txt
 ```
 
+
 ---
 
 ##  Notes
@@ -223,6 +224,7 @@ pip install -r requirements.txt
 * Modify EEGConformer input dimensions according to number of channels and sample points after preprocessing.
 
 ---
+
 
 ## Acknowledgements
 
