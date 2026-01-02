@@ -166,6 +166,7 @@ Models are evaluated using:
 
 
 ## Model Comparison Table (Mean ± SD) (Sample Format)
+
 | Model        | Strategy       | Accuracy        | Precision (S)   | Recall (S)      | F1-score (S)    | ROC-AUC         |
 | ------------ | -------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
 | Transformer  | Original       | 85.2 ± 1.3%     | 0.71 ± 0.04     | 0.54 ± 0.05     | 0.61 ± 0.04     | 0.82 ± 0.02     |
