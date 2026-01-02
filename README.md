@@ -92,6 +92,7 @@ Steps:
 - Remove old annotations that overlap with the specified range
 - Add new 1-second segments labeled `D`
 - Save the updated file as `eegX_updated.fif`
+  
 ---
 
 ## 🧠 Model Architectures
